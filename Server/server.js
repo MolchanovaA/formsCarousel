@@ -39,4 +39,5 @@ app.post("/form", function (req, resp) {
   let randomBool = random();
   let jsonRand = JSON.stringify(randomBool);
   resp.send(jsonRand);
+  console.log("sending...");
 });

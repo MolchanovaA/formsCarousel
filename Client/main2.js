@@ -21,13 +21,27 @@ function callBack(e) {
 
   justSubmittedForm.classList.replace(center, moveToPreviousPlace);
 
+  // console.log(this.id);
+  let thisForm = this;
+
   let ajaxObj = {
     path: "/form",
     succes(e) {
       if (+e.response) {
         console.log("succes");
+        callNextForm();
       } else {
-        console.log("failed answer from server");
+        console.log(thisForm, "failed answer from server");
+
+        let thisFormClassLists = Array.from(thisForm.classList);
+        let moveTothisFormPlace;
+
+        thisFormClassLists.includes(left)
+          ? (moveTothisFormPlace = left)
+          : (moveTothisFormPlace = right);
+
+        thisForm.classList.add(center);
+        thisForm.classList.add("badAcces");
       }
     },
     error() {
@@ -36,9 +50,11 @@ function callBack(e) {
   };
   new AjaxRequest(ajaxObj, info.collectInfo);
 
-  let nextForm =
-    e.target.nextElementSibling || e.target.offsetParent.firstElementChild;
-  nextForm.classList.add(center);
+  function callNextForm() {
+    let nextForm =
+      e.target.nextElementSibling || e.target.offsetParent.firstElementChild;
+    nextForm.classList.add(center);
+  }
 }
 
 forms.forEach((item) => item.addEventListener("submit", callBack));

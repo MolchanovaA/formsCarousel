@@ -77,3 +77,16 @@ div.formsBox {
 .addInfo {
   background-color: salmon;
 }
+
+.badAcces input {
+  background-color: aqua;
+}
+/* .badAcces:before {
+  content: "NO ACCES";
+  display: block;
+  color: rgb(16, 97, 168);
+  width: 100%;
+  height: 90%;
+  background-color: rgba(161, 185, 185, 0.393);
+  position: absolute;
+} */
