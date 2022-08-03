@@ -1,0 +1,79 @@
+:root {
+  --blue: #073b4b5b;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h3 {
+  font-size: 25px;
+}
+div.formsBox form input:not([type="submit"]) {
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: salmon;
+  color: aliceblue;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 15px 5px var(--blue);
+}
+.blue {
+  color: var(--blue);
+}
+
+div.formsBox {
+  width: 500px;
+  height: 500px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: rgba(112, 106, 106, 0.253);
+  margin: 0 auto;
+  position: relative;
+}
+
+.formsBox form {
+  width: 250px;
+  height: 250px;
+  border: 2px solid grey;
+  background-color: rgba(255, 255, 255, 0.968);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.formsBox form.toLeftPosition {
+  background-color: rgba(186, 244, 186, 0.929);
+  position: absolute;
+  left: -100px;
+  top: 50px;
+}
+.formsBox form.toRightPosition {
+  background-color: rgba(245, 215, 196, 0.929);
+  position: absolute;
+  left: 350px;
+  top: 50px;
+}
+
+.formsBox form.centerPosition {
+  background-color: rgba(180, 220, 239, 0.929);
+  transform: scale(1.2);
+  position: absolute;
+  top: 45px;
+  left: calc(50% - 125px);
+  z-index: 3;
+}
+
+.addInfo {
+  background-color: salmon;
+}
